@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Real esate</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+
+<img src=
+"https://images.pexels.com/photos/170809/pexels-photo-170809.jpeg?cs=srgb&dl=pexels-mike-170809.jpg&fm=jpg"
+         alt="zomato image", width="20", height="20", style="float:left">
+
+<img src=https://images.pexels.com/photos/2235130/pexels-photo-2235130.jpeg?cs=srgb&dl=pexels-frank-cone-2235130.jpg&fm=jpg"
+         alt="zomato image", width="20", height="20", style="float:right">
+<style>
+body {
+  background-image: url("https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?cs=srgb&dl=pexels-terry-magallanes-2635038.jpg&fm=jpg");
+  background-position: 200%;
+  background-size: cover;
+
+</style>
+<h1>Predict Sale Price Of House </h1> 
+
+
+<div class="login">
+
+    
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="LotFrontage" placeholder="LotFrontage" required="required" />
+        <input type="text" name="OverallQual" placeholder=" Material quality(1-10)" required="required" />
+		<input type="text" name="YearBuilt" placeholder="Year Of Built" required="required" />
+        <input type="text" name="YearRemodAdd" placeholder="Remodel date(Yr)" required="required" />
+        <input type="text" name="TotalBsmtSF" placeholder="Area Of Basement" required="required" />
+        <input type="text" name="1stFlrSF" placeholder="1st Floor Area" required="required" />
+        <input type="text" name="GrLivArea" placeholder="Ground Living Area" required="required" />
+        <input type="text" name="FullBath" placeholder="No Of Full Bath" required="required" />
+        <input type="text" name="TotRmsAbvGrd" placeholder="Total Rooms" required="required" />
+        <input type="text" name="FirePlaces" placeholder="No Of FirePlaces" required="required" />
+        <input type="text" name="GarageYrBlt" placeholder="Garage Year Built" required="required" />
+        <input type="text" name="GarageCars" placeholder="Size of Garage(Car Capacity)" required="required" />
+        <input type="text" name="GarageArea" placeholder="Garage Area" required="required" />
+        <div>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </div>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+</div>
+
+
+</body>
+</html>
